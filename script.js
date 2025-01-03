@@ -1,26 +1,48 @@
-// console.log("test");
 
-// Pseude code:
-// The computer has to make a choice
-// There are three opties: rock paper or scissors
-// The choice is completely random
-// The user is prompted to input their choice.
-// The program compares choices and output a the result 
-// there is no GUI, everything happens in console
+let humanScore = 0;
+let computerScore = 0;
+let rounds = 0;
 
-let computersays = Math.floor(Math.random() * 3);
+game();
 
-console.log(computersays)
+function game() {
+    let human = "";
+    let computer = "";
 
-let computerresult;
-    if (computersays == 0) {
-        computerresult = "Rock";
-    } else if (computersays == 1) {
-        computerresult = "Paper";
-    } else if (computersays == 2) {
-        computerresult = "Scissors";
+    do {
+        human = getHumanChoice();
+        computer = getComputerChoice();
+    } while (rounds < 5) 
+        
     }
 
-let userresult = prompt("Rock Paper Scirrors?")
+    if (human == computer) {
+        console.log("its a draw, please play again");
+    } else if ((human == "rock" && computer == "paper")(human == "scissors" && computer == "rock")) {
+        rounds++;
+        computerScore++;
+    }else {
+        rounds++;
+        humanScore++;
+    }
 
-console.log("the computer chose " + computerresult + " and the player chose " + userresult )
+console.log("computer: " + computer + " VS " + human)
+
+
+function getComputerChoice () {
+    let random = Math.floor(Math.random() * 3);
+
+    if (random == 0) {
+        return "rock";
+    } else if (random == 1) {
+        return "paper";
+    } else {
+        return "scissors";
+    }
+}
+
+function getHumanChoice () {
+    let choice = prompt("Enter rock, paper or scissors").toLowerCase()
+    return choice;
+
+}
