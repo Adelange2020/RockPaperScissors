@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+    // variables
+
+    let humanScore = 0;
+    let computerScore = 0;
+    let round = 1;
+
+    getHumanInput()
+    getComputerInput()
+
+    // functions
+
+function getHumanInput() {
+    let human = prompt("Please enter: Rock, Paper or Scissors");
+    human = (human.charAt(0).toUpperCase() + human.slice(1).toLowerCase());
+    console.log("You chose " + human);
+
+}
+
+function getComputerInput () {
+    let computer = Math.floor(Math.random() * 3)
+
+    if (computer == 0) {
+        return "Rock"
+    } else if (computer == 1) {
+        return "Paper"
+    } else {
+        return "Scissors"
+    }
+
+    console.log(computer)
+}
+
+
+</script>
+    
+</body>
+</html>
